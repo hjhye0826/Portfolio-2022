@@ -3,7 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bullet
+  - Coin
+  - PowerUp
+  - SpeedUp
+  - Enemy1
+  - Enemy2
+  - Apple
+  - Iron
+  - Plant
+  - PlantRespawn
+  - IronRespawn
+  - AppleRespawn
+  - Rocket
   layers:
   - Default
   - TransparentFX
@@ -13,11 +26,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Bullet
+  - Enemy
+  - Item
+  - Event
   - 
   - 
   - 
