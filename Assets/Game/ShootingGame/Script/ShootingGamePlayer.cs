@@ -22,8 +22,8 @@ public class ShootingGamePlayer : MonoBehaviour
 
     void Awake()
     {
-        this.PlayerHpBar = GameObject.Find("layerHpBarr").GetComponent<Slider>();
-        this.playerhptext = GameObject.Find("HpText").GetComponent<Text>();
+        PlayerHpBar = GameObject.Find("layerHpBarr").GetComponent<Slider>();
+        playerhptext = GameObject.Find("HpText").GetComponent<Text>();
     }
 
     public void PlayerInit()
@@ -39,19 +39,19 @@ public class ShootingGamePlayer : MonoBehaviour
 
     public void PlayerAttack()
     {
-        for (int i = 0; i < this.OnceBulletCnt; ++i)
+        for (int i = 0; i < OnceBulletCnt; ++i)
         {
             var bullet = Instantiate(BulletPrefab);
             var bulletPos = transform.position;
 
-            if (1 < this.OnceBulletCnt)
+            if (1 < OnceBulletCnt)
                 bulletPos.x += 0.35f * (i - 1);
 
             bullet.transform.position = bulletPos;
-            bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up * this.BulletSpeed);
+            bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up * BulletSpeed);
             bullet.transform.SetParent(GameObject.Find("BulletList").transform, false);
 
-            Destroy(bullet, this.BulletLifeTime); // n초 뒤 총알 자동 삭제
+            Destroy(bullet, BulletLifeTime); // n초 뒤 총알 자동 삭제
         }
     }
 
@@ -72,7 +72,7 @@ public class ShootingGamePlayer : MonoBehaviour
 
     void AddOnceBulletCnt(int add)
     {
-        this.OnceBulletCnt += add;
+        OnceBulletCnt += add;
     }
 
     bool IsCollision()
@@ -98,7 +98,7 @@ public class ShootingGamePlayer : MonoBehaviour
         if (obj.layer == LayerMask.NameToLayer("Enemy"))
         {
             var damage = obj.GetComponent<ShootingGameEnemy>().Damage;
-            this.TakeDamage(damage);
+            TakeDamage(damage);
             Destroy(obj);
         }
     }

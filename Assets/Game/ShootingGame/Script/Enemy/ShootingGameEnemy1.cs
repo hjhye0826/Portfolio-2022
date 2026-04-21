@@ -6,7 +6,7 @@ public class ShootingGameEnemy1 : ShootingGameEnemy
 {
     public ShootingGameEnemy1()
     {
-        speed = 0.005f;
+        speed = 0.003f;
     }
 
     public override void Move()

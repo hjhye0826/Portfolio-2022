@@ -9,8 +9,7 @@ public class PtortfolitTitleManager : MonoBehaviour
     public string[] sceneStringList;
     public SceneChangeManager sceneChangeManager; //여기에 이름 쓴 대로 해당하는 panel 클릭 이벤트 함수 추가!
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         foreach(var str in sceneStringList)
         {
@@ -20,12 +19,6 @@ public class PtortfolitTitleManager : MonoBehaviour
 
             sceneObj.GetComponent<Button>().onClick.AddListener(() => sceneChangeManager.LoadGameScene(str));
         }
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 }

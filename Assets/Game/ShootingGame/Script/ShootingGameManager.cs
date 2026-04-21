@@ -8,8 +8,8 @@ public class ShootingGameManager : MonoBehaviour
     public bool isStartRightAway = false;
     [Header("Title")]
     public GameObject TitlePanel;
-    public GameObject StartButton;
-    public GameObject InfoButton;
+    public Button StartButton;
+    public Button InfoButton;
     public GameObject InfoPanel;
 
     [Header("Game")]
@@ -18,8 +18,8 @@ public class ShootingGameManager : MonoBehaviour
 
     [Header("End")]
     public GameObject EndPanel;
-    public GameObject ReStartButton;
-    public GameObject ReTitleButton;
+    public Button ReStartButton;
+    public Button ReTitleButton;
 
     [Header("Manager")]
     public GameObject PlayManager;
@@ -42,14 +42,14 @@ public class ShootingGameManager : MonoBehaviour
 
     public void TitlePanelInit()
     {
-        StartButton.GetComponent<Button>().onClick.AddListener(OnClickStartButton);
-        InfoButton.GetComponent<Button>().onClick.AddListener(OnClickInfoButton);
+        StartButton.onClick.AddListener(OnClickStartButton);
+        InfoButton.onClick.AddListener(OnClickInfoButton);
     }
 
     public void EndPanelInit()
     {
-        ReStartButton.GetComponent<Button>().onClick.AddListener(OnClickStartButton);
-        ReTitleButton.GetComponent<Button>().onClick.AddListener(OnClickReTitleButton);
+        ReStartButton.onClick.AddListener(OnClickStartButton);
+        ReTitleButton.onClick.AddListener(OnClickReTitleButton);
     }
 
     public void ShootingGameModeInit()

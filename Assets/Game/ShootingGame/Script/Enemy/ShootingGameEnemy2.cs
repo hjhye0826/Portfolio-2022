@@ -8,7 +8,7 @@ public class ShootingGameEnemy2 : ShootingGameEnemy
     {
         health = 20.0f;
         damage = 15.0f;
-        speed = 0.008f;
+        speed = 0.004f;
         score = 2;
     }
 

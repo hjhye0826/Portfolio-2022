@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootingGameEnemyManager : MonoBehaviour
@@ -24,7 +23,7 @@ public class ShootingGameEnemyManager : MonoBehaviour
             // random로 spawn
             var pos = new Vector2(Random.Range(PosRange[0].x, PosRange[1].x), 
                                                     Random.Range(PosRange[0].y, PosRange[1].y));
-            this.SpawnEnemy(EnemyPrefabs[Random.Range(0, EnemyPrefabs.Length)], pos);
+            SpawnEnemy(EnemyPrefabs[Random.Range(0, EnemyPrefabs.Length)], pos);
 
             // n초간 제어권을 넘겨 준 후 다시 함수 내용 실행
             yield return new WaitForSeconds(2);

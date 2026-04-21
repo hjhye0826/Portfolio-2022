@@ -17,8 +17,8 @@ public class ShootingGamePlayerControl : MonoBehaviour
         if (ShootingGameManager.IsPlayAbleCheck() == false)
             return;
 
-        this.PalyerMoveUpdate();
-        this.PlayerAttackUpdate();
+        PalyerMoveUpdate();
+        PlayerAttackUpdate();
     }
 
     void PalyerMoveUpdate()
@@ -26,31 +26,31 @@ public class ShootingGamePlayerControl : MonoBehaviour
         var playerSpeed = player.PlayerSpeed;
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            if (this.transform.position.y > AbleMovePos[1].y)
+            if (transform.position.y > AbleMovePos[1].y)
                 return;
 
-            this.transform.Translate(0, playerSpeed, 0);
+            transform.Translate(0, playerSpeed, 0);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            if (this.transform.position.x < AbleMovePos[0].x)
+            if (transform.position.x < AbleMovePos[0].x)
                 return;
 
-            this.transform.Translate(-playerSpeed, 0, 0);
+            transform.Translate(-playerSpeed, 0, 0);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            if (this.transform.position.y < AbleMovePos[0].y)
+            if (transform.position.y < AbleMovePos[0].y)
                 return;
 
-            this.transform.Translate(0, -playerSpeed, 0);
+            transform.Translate(0, -playerSpeed, 0);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            if (this.transform.position.x > AbleMovePos[1].x)
+            if (transform.position.x > AbleMovePos[1].x)
                 return;
 
-            this.transform.Translate(playerSpeed, 0, 0);
+            transform.Translate(playerSpeed, 0, 0);
         }
     }
 
@@ -58,7 +58,7 @@ public class ShootingGamePlayerControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            this.player.PlayerAttack();
+            player.PlayerAttack();
         }
     }
 }
